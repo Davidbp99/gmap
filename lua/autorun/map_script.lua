@@ -14,16 +14,9 @@ local JobDoors = {
  -- [mapid] = "job name", (job name does not team TEAM_)
 }
 
-local gamemasters = {
-
-
-
-}
-
 
 
 local RankDoors = {
-[3834] = "superadmin", -- Kill floor
 [3837] = "gamemasters",
 [3903] = "gamemasters",
 [3893] = "gamemasters",
@@ -41,7 +34,7 @@ hook.Add("PlayerUse", "DoorJobs", function(pl, ent)
   	  if (pl:GetUserGroup() == RankDoors[ent:MapCreationID()]) then -- here it gets the rank and checks if it should have perms
   	  	 return 
   	  	 else
-pl:SendMessage(donthaveaccess)
+          PrintMessage( HUD_PRINTTALK, donthaveaccess)
   	  	 end
     if (pl:getDarkRPVar("job") ~= JobDoors[ent:MapCreationID()]) then -- here it gets the jobs and checks if it should have perms
     	
