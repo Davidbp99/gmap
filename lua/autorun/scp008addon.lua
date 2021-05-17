@@ -1,43 +1,29 @@
 print("SCP-008 Map Addon Loaded")
 
-local scp008 = {
-    [3411] = true
-}
-
-local stage = "closed"
-
-local time = 10
-
-local staffonduty = {
-    [TEAM_STAFF] = true,
-}
-
-local pointAscp008 = "428.834076, -950.255554, 7985.613770"
-local pointBscp008 = "194.459717, -1234.658569, 7873.828613"
 
 hook.Add("PlayerUse", "scp008change", function(pl, ent)
-    if (scp008[ent:MapCreationID()]) then
+    if (gMap.ButtonID[ent:MapCreationID()]) then
+    	if (gMap.SCP008AddonOn == true) then
         for k, v in pairs(player.GetAll()) do
-            if v:GetPos():WithinAABox(Vector(pointAscp008), Vector(pointBscp008)) then
+            if v:GetPos():WithinAABox(Vector(gMap.SCP008PointA), Vector(gMap.SCP008PointA)) then
             else
-                if (staffonduty[pl:Team()] == true) then return v:PrintMessage(HUD_PRINTTALK, "You won't be effected SCP-008") end
-                
-            if v:GetPos():WithinAABox(Vector(pointAscp008), Vector(pointBscp008)) then
+                if (gMap.SCP008Protection[pl:Team()] == true) then return v:PrintMessage(HUD_PRINTTALK, "You won't be effected SCP-008") end
+        
                 
 
-                timer.Simple(time / 3, function()
+                timer.Simple(gMap.SCP008TurningTime / 3, function()
                     if v:IsPlayer() then
                         v:ChatPrint("You start to feel dizzy..")
                     end
                 end)
 
-                timer.Simple(time / 2, function()
+                timer.Simple(gMap.SCP008TurningTime / 2, function()
                     if v:IsPlayer() then
                         v:ChatPrint("You have an unsationable urge to eat flesh..")
                     end
                 end)
 
-                timer.Simple(time, function()
+                timer.Simple(gMap.SCP008TurningTime, function()
                     if v:IsPlayer() then
                         v:SetModel("models/player/zombie_classic.mdl")
                         v:StripWeapons()
