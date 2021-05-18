@@ -1,4 +1,4 @@
-print("SCP-008 Map Addon Loaded")
+gMap:Print("SCP-008 Map Addon Loaded")
 
 hook.Add("PlayerUse", "scp008change", function(pl, ent)
     if (gMap.ButtonID[ent:MapCreationID()]) then
