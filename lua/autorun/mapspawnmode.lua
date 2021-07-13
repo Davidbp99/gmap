@@ -3,20 +3,22 @@ gMap:Print("RP_Downtown_tits_david Addon Loaded")
 
 
 
-local spawnmodeenabled = true
+local spawnmodeenabled = false
 local spawnmodebutton = "disablespawn" -- name for the button that activates the wall brushes in main square and in spawn
 
 --// Disable teleports
 -- mainsquaretpbutton , beachtpbutton , parktpbutton, warehousetpbutton, pvptpbutton, estatestpbutton
-local disablemainsquaretp = true
+local disablemainsquaretp = false
 local disablebeachtp = false
 local disableparktp = false
 local disablewarehousetp = false
-local disablepvptp = true
-local disableestatestp = true
+local disablepvptp = false
+local disableestatestp = false
 
 --//
 
+
+hook.Add("Initialize", "Automatedmap", function ()
 timer.Simple(5, function() 
 if spawnmodeenabled == true then
     for k,v in pairs(ents.FindByName(spawnmodebutton)) do
@@ -62,4 +64,4 @@ if disableestatestp == true then
             end
 
 end)
-
+end)
