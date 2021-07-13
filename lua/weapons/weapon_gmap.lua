@@ -31,11 +31,13 @@ function SWEP:CanPrimaryAttack()
 end
 
 function SWEP:SecondaryAttack()
-    local getmapid = Entity(1):GetEyeTrace().Entity:MapCreationID()
+
+    local getmapid = LocalPlayer():GetEyeTrace().Entity:MapCreationID()
     PrintMessage(HUD_PRINTTALK, getmapid)
 end
 
 function SWEP:PrimaryAttack()
-    local getmapid = Entity(1):GetEyeTrace().Entity:MapCreationID()
+
+    local getmapid = Entity(1):GetEyeTrace().Entity:MapCreationID(self)
     PrintMessage(HUD_PRINTTALK, getmapid)
 end
