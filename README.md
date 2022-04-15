@@ -20,6 +20,7 @@ This was a more private system for a map I never got a chance to release for har
 This kinda only works on some maps (well you can use it on any maps). Example my map or the SCP Site 8 V2 (links below). So if someone open the SCP-008 (gas going out) the player will be starting to turn into a monster (zombie). You can control the time and if you go into lua/autorun/scp008addon.lua you can edit the weapon/model it gives.
 
 SCP 008 map supported (that I'm aware of): https://steamcommunity.com/sharedfiles/filedetails/?id=2457474479 https://steamcommunity.com/sharedfiles/filedetails/?id=1107841272
+
 For SCP nerds: https://www.youtube.com/watch?v=gBoKlLW6eCw https://scpcb.fandom.com/wiki/SCP-008
 
 ## How to get the ID for the buttons or pos
