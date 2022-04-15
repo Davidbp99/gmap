@@ -22,5 +22,9 @@ This kinda only works on some maps (well you can use it on any maps). Example my
 SCP 008 map supported (that I'm aware of): https://steamcommunity.com/sharedfiles/filedetails/?id=2457474479 https://steamcommunity.com/sharedfiles/filedetails/?id=1107841272
 For SCP nerds: https://www.youtube.com/watch?v=gBoKlLW6eCw https://scpcb.fandom.com/wiki/SCP-008
 
+## How to get the ID for the buttons or pos
+
 To get the button id use: lua_run Entity(1):ChatPrint(Entity(1):GetEyeTrace().Entity:MapCreationID())
 You can also use the weapon but is throwing an error atm.
+
+To get the pos to set up an box/area. Use: getpos
