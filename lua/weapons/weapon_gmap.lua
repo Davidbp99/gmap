@@ -30,6 +30,7 @@ function SWEP:CanPrimaryAttack()
     return true
 end
 
+-- lua_run Entity(1):ChatPrint(Entity(1):GetEyeTrace().Entity:MapCreationID())
 function SWEP:SecondaryAttack()
 
     local getmapid = LocalPlayer():GetEyeTrace().Entity:MapCreationID()
