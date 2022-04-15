@@ -1,4 +1,6 @@
 gMap:Print("RP_Downtown_tits_david Addon Loaded")
+-- For a map that I never released
+
 --// Set the spawn mode. false = it got the teleport + stairs up to main square.  true= just the teleports
 local spawnmodeenabled = false
 --// Disable teleports

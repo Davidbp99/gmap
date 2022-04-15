@@ -11,7 +11,7 @@ hook.Add("PlayerUse", "KillFloor", function(pl, ent)
                     if v:GetPos():WithinAABox(Vector(gMap.KillFloorPointA), Vector(gMap.KillFloorPointB)) then
 
                     else
-                    	if (v:GetUserGroup() == gMap.Nottobeeffectedbykillfloor[v:GetUserGroup()]) then return 
+                    	if (v:GetUserGroup() == gMap.Nottobeeffectedbykillfloor[v:GetUserGroup()]) && (v:GetSecondaryUserGroup() == gMap.Nottobeeffectedbykillfloor[v:GetSecondaryUserGroup()]) then return 
 
 end
            
